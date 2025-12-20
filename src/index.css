@@ -1,4 +1,12 @@
 /* RESET ALL DEFAULT unwanted styles */
+/* src/index.css */
+@import "react-big-calendar/lib/css/react-big-calendar.css";
+
+/* your other custom styles */
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+}
 
 * {
   margin: 0;
