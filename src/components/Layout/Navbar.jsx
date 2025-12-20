@@ -51,7 +51,7 @@ export default function Navbar() {
         letterSpacing: "0.3px",
         lineHeight: "1.3",
       }}>
-        Mental Health Counseling System
+        Online Mental Health Counseling System
       </div>
 
       {/* Navigation */}
