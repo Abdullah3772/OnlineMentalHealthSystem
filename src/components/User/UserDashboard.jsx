@@ -2,14 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/**
- * UserDashboard with Dark Neon Left Sidebar (Purple Neon #a855f7)
- * Paste to: src/components/User/UserDashboard.jsx
- *
- * Requirements:
- *  - framer-motion installed (npm i framer-motion)
- *  - This is a UI-only component (dummy data). Hook up APIs as needed.
- */
+
 
 const NEON = "#a855f7";
 
