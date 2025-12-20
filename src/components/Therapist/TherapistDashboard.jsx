@@ -8,7 +8,7 @@ export default function TherapistDashboard() {
     { from: "you", text: "Hi, how can I help?" },
   ]);
 
-   const chatEndRef = useRef(null);
+  const chatEndRef = useRef(null);
 
   
   // Auto scroll chat
