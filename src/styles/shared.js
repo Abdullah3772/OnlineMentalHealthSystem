@@ -1,29 +1,29 @@
-// Shared styles for the application
+// Shared styles for the Online Mental Health System
+
 export const containerStyle = {
+  minHeight: "100vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  minHeight: "100vh",
   padding: "20px",
-  position: "relative",
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
 };
 
 export const formContainerStyle = {
-  background: "rgba(255, 255, 255, 0.95)",
+  backgroundColor: "#fff",
   padding: "40px",
-  borderRadius: "16px",
-  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+  borderRadius: "20px",
+  boxShadow: "0 10px 40px rgba(0, 0, 0, 0.1)",
   maxWidth: "500px",
   width: "100%",
-  border: "1px solid rgba(0, 0, 0, 0.1)",
 };
 
 export const headingStyle = {
-  textAlign: "center",
-  marginBottom: "30px",
   fontSize: "28px",
   fontWeight: "700",
-  color: "#1a1a1a",
+  marginBottom: "24px",
+  textAlign: "center",
+  color: "#333",
 };
 
 export const formGroupStyle = {
@@ -32,80 +32,80 @@ export const formGroupStyle = {
   gap: "16px",
 };
 
-export const inputStyle = {
-  padding: "12px 16px",
-  border: "2px solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "8px",
-  fontSize: "15px",
-  outline: "none",
-  transition: "border-color 0.3s ease",
-  backgroundColor: "#fff",
+export const labelStyle = {
+  fontSize: "14px",
+  fontWeight: "600",
+  color: "#333",
+  marginBottom: "6px",
 };
 
-export const textareaStyle = {
-  padding: "12px 16px",
-  border: "2px solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "8px",
+export const inputStyle = {
+  padding: "14px 16px",
   fontSize: "15px",
+  border: "2px solid #e0e0e0",
+  borderRadius: "10px",
   outline: "none",
-  transition: "border-color 0.3s ease",
-  backgroundColor: "#fff",
-  resize: "vertical",
+  transition: "all 0.3s ease",
   fontFamily: "inherit",
 };
 
-export const selectStyle = {
-  padding: "12px 16px",
-  border: "2px solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "8px",
+export const textareaStyle = {
+  padding: "14px 16px",
   fontSize: "15px",
+  border: "2px solid #e0e0e0",
+  borderRadius: "10px",
   outline: "none",
-  transition: "border-color 0.3s ease",
+  transition: "all 0.3s ease",
+  fontFamily: "inherit",
+  resize: "vertical",
+  minHeight: "100px",
+};
+
+export const selectStyle = {
+  padding: "14px 16px",
+  fontSize: "15px",
+  border: "2px solid #e0e0e0",
+  borderRadius: "10px",
+  outline: "none",
+  transition: "all 0.3s ease",
+  fontFamily: "inherit",
   backgroundColor: "#fff",
   cursor: "pointer",
 };
 
 export const buttonStyle = {
-  padding: "14px 20px",
-  border: "none",
-  borderRadius: "8px",
+  padding: "14px 24px",
   fontSize: "16px",
   fontWeight: "600",
+  border: "none",
+  borderRadius: "10px",
   cursor: "pointer",
   transition: "all 0.3s ease",
   background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   color: "#fff",
-  marginTop: "10px",
-};
-
-export const labelStyle = {
-  fontWeight: "600",
-  color: "#1a1a1a",
-  fontSize: "14px",
-  marginBottom: "6px",
-  display: "block",
+  boxShadow: "0 4px 15px rgba(102, 126, 234, 0.4)",
 };
 
 export const infoBoxStyle = {
-  background: "rgba(102, 126, 234, 0.1)",
+  backgroundColor: "#f0f4ff",
   padding: "12px 16px",
   borderRadius: "8px",
-  marginBottom: "20px",
-  border: "1px solid rgba(102, 126, 234, 0.3)",
-  fontSize: "14px",
-  color: "#333",
+  fontSize: "13px",
+  color: "#555",
+  border: "1px solid #d0e0ff",
 };
 
 export const errorStyle = {
+  backgroundColor: "#ffe0e0",
+  padding: "12px 16px",
+  borderRadius: "8px",
+  fontSize: "13px",
   color: "#d32f2f",
-  fontSize: "14px",
-  marginTop: "10px",
-  textAlign: "center",
-  fontWeight: "600",
+  border: "1px solid #ffcccc",
 };
 
 export const flexRowStyle = {
   display: "flex",
   gap: "12px",
-  alignItems: "center",
+  flexWrap: "wrap",
 };

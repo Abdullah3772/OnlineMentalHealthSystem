@@ -14,7 +14,7 @@ import {
 from "../../styles/shared";
 
 export default function EmergencySupport() {
-  const [_contactMethod, setContactMethod] = useState("");
+  const [contactMethod, setContactMethod] = useState("");
 
   return (
     <motion.div

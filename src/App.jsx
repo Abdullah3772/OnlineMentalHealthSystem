@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,8 +22,7 @@ import AppointmentRequest from "./components/Appointment/AppointmentRequest";
 import SessionFeedback from "./components/Feedback/SessionFeedback";
 import EmergencySupport from "./components/Emergency/EmergencySupport";
 
-import PageWrapper from "./components/Layout/PageWrapper";
-import { pageAnimation } from "./components/Layout/animations.jsx";
+import PageWrapper, { pageAnimation } from "./components/Layout/PageWrapper";
 
 // ------------------------------------------------------
 // FOOTER
@@ -71,12 +70,13 @@ function LayoutManager({ children }) {
 // MAIN APP
 // ------------------------------------------------------
 export default function App() {
-  const [userLoggedIn, setUserLoggedIn] = useState(() => {
-    return localStorage.getItem("userLoggedIn") === "true";
-  });
-  const [therapistLoggedIn, setTherapistLoggedIn] = useState(() => {
-    return localStorage.getItem("therapistLoggedIn") === "true";
-  });
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [therapistLoggedIn, setTherapistLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setUserLoggedIn(localStorage.getItem("userLoggedIn") === "true");
+    setTherapistLoggedIn(localStorage.getItem("therapistLoggedIn") === "true");
+  }, []);
 
   const handleUserLogin = () => {
     localStorage.setItem("userLoggedIn", "true");
