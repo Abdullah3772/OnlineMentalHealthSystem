@@ -29,10 +29,17 @@ import PageWrapper, { pageAnimation } from "./components/Layout/PageWrapper";
 // ------------------------------------------------------
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6 mt-10">
-      <div className="text-center text-sm">
-        <p>© 2025 Online Mental Health Counseling System</p>
-        <p className="mt-1">All Rights Reserved.</p>
+    <footer style={{
+      background: "#1a1a1a",
+      color: "#d1d1d1",
+      padding: "20px",
+      textAlign: "center",
+      borderTop: "2px solid rgba(0, 234, 255, 0.3)",
+      marginTop: "auto",
+    }}>
+      <div style={{ fontSize: "14px" }}>
+        <p style={{ margin: 0, fontWeight: "600" }}>© 2025 Online Mental Health Counseling System</p>
+        <p style={{ margin: "5px 0 0 0", fontSize: "13px", opacity: 0.8 }}>All Rights Reserved.</p>
       </div>
     </footer>
   );
@@ -49,11 +56,13 @@ function LayoutManager({ children }) {
   const hideLayout = dashboardPaths.includes(location.pathname);
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
       {!hideLayout && <Navbar />}
-      {children}
+      <main style={{ flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
+        {children}
+      </main>
       {!hideLayout && <Footer />}
-    </>
+    </div>
   );
 }
 

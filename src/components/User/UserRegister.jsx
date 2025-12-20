@@ -1,77 +1,61 @@
 import { motion } from "framer-motion";
+import {
+  containerStyle,
+  formContainerStyle,
+  headingStyle,
+  inputStyle,
+  textareaStyle,
+  buttonStyle,
+  selectStyle,
+  formGroupStyle,
+} from "../../styles/shared";
 
 export default function UserRegister() {
   return (
     <motion.div
-      style={{ textAlign: "center", padding: "30px" }}
+      style={containerStyle}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 style={{ color: "black", marginBottom: "20px" }}>User Registration</h2>
-
       <motion.div
-        style={{
-          width: "350px",
-          margin: "auto",
-          padding: "20px",
-          borderRadius: "15px",
-          background: "rgba(255,255,255,0.08)",
-          backdropFilter: "blur(10px)",
-          boxShadow: "0 0 15px #0c5056ff",
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-        }}
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
+        style={formContainerStyle}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <input type="text" placeholder="Name" style={inputStyle} />
-        <input type="email" placeholder="Email" style={inputStyle} />
-        <input type="password" placeholder="Password" style={inputStyle} />
-        <input type="password" placeholder="Confirm Password" style={inputStyle} />
-        <input type="text" placeholder="Phone Number" style={inputStyle} />
-        <input type="date" style={inputStyle} />
+        <h2 style={headingStyle}>User Registration</h2>
 
-        <select style={inputStyle}>
-          <option value="">Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
+        <div style={formGroupStyle}>
+          <input type="text" placeholder="Full Name" style={inputStyle} required />
+          <input type="email" placeholder="Email Address" style={inputStyle} required />
+          <input type="password" placeholder="Password" style={inputStyle} required />
+          <input type="password" placeholder="Confirm Password" style={inputStyle} required />
+          <input type="tel" placeholder="Phone Number" style={inputStyle} required />
+          <input type="date" placeholder="Date of Birth" style={inputStyle} required />
 
-        <textarea
-          placeholder="Address"
-          rows="3"
-          style={{ ...inputStyle, resize: "none" }}
-        ></textarea>
+          <select style={selectStyle} required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          style={buttonStyle}
-        >
-          Register
-        </motion.button>
+          <textarea
+            placeholder="Address"
+            rows="3"
+            style={textareaStyle}
+          ></textarea>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            style={buttonStyle}
+          >
+            Register
+          </motion.button>
+        </div>
       </motion.div>
     </motion.div>
   );
 }
-
-const inputStyle = {
-  padding: "10px",
-  borderRadius: "8px",
-  border: "none",
-  outline: "none",
-  fontSize: "14px",
-};
-
-const buttonStyle = {
-  padding: "12px",
-  borderRadius: "8px",
-  border: "none",
-  background: "#00eaff",
-  fontWeight: "bold",
-  cursor: "pointer",
-  transition: "0.3s",
-};

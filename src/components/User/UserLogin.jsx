@@ -2,6 +2,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import {
+  containerStyle,
+  formContainerStyle,
+  headingStyle,
+  inputStyle,
+  buttonStyle,
+  formGroupStyle,
+  infoBoxStyle,
+  errorStyle,
+} from "../../styles/shared";
 
 
 export default function UserLogin({ onLogin }) {
@@ -30,67 +40,34 @@ export default function UserLogin({ onLogin }) {
 
   return (
     <motion.div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "20px",
-        flexDirection: "column",
-        gap: "20px",
-      }}
+      style={containerStyle}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Dummy credentials */}
+      {/* Dummy credentials info box */}
       <div
         style={{
-          background: "rgba(0,0,0,0.1)",
-          padding: "10px 20px",
-          borderRadius: "10px",
-          textAlign: "center",
-          color: "#000",
-          fontWeight: "600",
-          boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+          position: "absolute",
+          top: "100px",
+          ...infoBoxStyle,
         }}
       >
-        <p>Email: <b>user@example.com</b></p>
-        <p>Password: <b>123456</b></p>
+        <p>Demo Email: <b>user@example.com</b></p>
+        <p>Demo Password: <b>123456</b></p>
       </div>
 
       <motion.div
-        style={{
-          width: "100%",
-          maxWidth: "400px",
-          padding: "30px",
-          borderRadius: "20px",
-          background: "rgba(255,255,255,0.15)",
-          backdropFilter: "blur(15px)",
-          WebkitBackdropFilter: "blur(15px)",
-          boxShadow: "0 0 20px rgba(0, 255, 255,0.7)",
-          border: "1px solid rgba(255,255,255,0.3)",
-        }}
+        style={formContainerStyle}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "20px",
-            color: "black",
-            fontWeight: "800",
-            letterSpacing: "1px",
-            textShadow: "0 0 8px cyan",
-          }}
-        >
-          User Login
-        </h2>
+        <h2 style={headingStyle}>User Login</h2>
 
         <form
           onSubmit={handleSubmit}
-          style={{ display: "flex", flexDirection: "column", gap: "15px" }}
+          style={formGroupStyle}
         >
           <input
             type="email"
@@ -109,27 +86,24 @@ export default function UserLogin({ onLogin }) {
             required
           />
 
-          {error && (
-            <span style={{ color: "red", fontSize: "14px", textAlign: "center" }}>
-              {error}
-            </span>
-          )}
+          {error && <div style={errorStyle}>{error}</div>}
 
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginTop: "-5px",
+              fontSize: "14px",
             }}
           >
             <label
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "5px",
-                color: "black",
-                fontSize: "14px",
+                gap: "6px",
+                color: "#000",
+                fontWeight: "500",
+                cursor: "pointer",
               }}
             >
               <input type="checkbox" style={{ cursor: "pointer" }} />
@@ -139,11 +113,10 @@ export default function UserLogin({ onLogin }) {
             <a
               href="#"
               style={{
-                color: "black",
-                fontSize: "14px",
+                color: "#000",
                 fontWeight: "600",
                 textDecoration: "none",
-                transition: "0.3s",
+                transition: "opacity 0.3s",
               }}
               onMouseOver={(e) => (e.target.style.opacity = "0.6")}
               onMouseOut={(e) => (e.target.style.opacity = "1")}
@@ -154,50 +127,28 @@ export default function UserLogin({ onLogin }) {
 
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             style={buttonStyle}
           >
             Login
           </motion.button>
         </form>
 
-        {/* **New Register Section** */}
+        {/* Register Section */}
         <div style={{ textAlign: "center", marginTop: "15px" }}>
-          <p style={{ color: "black", fontSize: "14px" }}>
+          <p style={{ color: "#000", fontSize: "14px", fontWeight: "500" }}>
             Don't have an account?{" "}
-            <span
-              style={{ color: "cyan", cursor: "pointer", fontWeight: "700" }}
+            <motion.span
+              style={{ color: "#00eaff", cursor: "pointer", fontWeight: "700" }}
               onClick={handleRegisterClick}
+              whileHover={{ scale: 1.05 }}
             >
-              Register
-            </span>
+              Register Here
+            </motion.span>
           </p>
         </div>
       </motion.div>
     </motion.div>
   );
 }
-
-const inputStyle = {
-  padding: "14px",
-  borderRadius: "10px",
-  border: "none",
-  outline: "none",
-  fontSize: "16px",
-  background: "rgba(255, 255, 255, 0.9)",
-  boxShadow: "0 0 5px rgba(0,0,0,0.2)",
-};
-
-const buttonStyle = {
-  padding: "14px",
-  borderRadius: "10px",
-  border: "none",
-  cursor: "pointer",
-  fontSize: "18px",
-  fontWeight: "700",
-  background: "linear-gradient(90deg, cyan, #00aaff)",
-  color: "#000",
-  boxShadow: "0 0 10px cyan",
-  transition: "0.3s",
-};

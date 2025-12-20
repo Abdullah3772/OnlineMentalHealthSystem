@@ -2,16 +2,16 @@
 /* src/index.css */
 @import "react-big-calendar/lib/css/react-big-calendar.css";
 
-/* your other custom styles */
-body {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
-}
-
+/* Reset all defaults */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
 }
 
 /* GLOBAL ROOT */
@@ -27,7 +27,8 @@ body {
 /* REMOVE OLD VITE BODY STYLES */
 body {
   width: 100%;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
 
   /* Correct background image path */
@@ -37,7 +38,6 @@ body {
   background-position: center center;
   background-attachment: fixed;
 
-  display: block;      /* FIX ✓ */
   overflow-x: hidden;  /* FIX mobile overflow */
   color: #240202;
 }

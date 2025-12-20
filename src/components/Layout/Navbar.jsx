@@ -37,17 +37,19 @@ export default function Navbar() {
   };
 
   return (
-    <div style={{ background: "transparent", paddingBottom: "15px" }}>
+    <nav style={{ background: "transparent", paddingBottom: "10px", position: "relative", zIndex: 1000 }}>
       {/* Heading */}
       <div style={{
         textAlign: "center",
-        padding: "15px 10px",
-        fontSize: "40px",
-        fontWeight: "bold",
+        padding: "12px 10px",
+        fontSize: "clamp(18px, 4vw, 28px)",
+        fontWeight: "700",
         color: "#000",
-        background: "rgba(255,255,255,0.1)",
-        backdropFilter: "blur(5px)",
-        borderBottom: "1px solid rgba(0,0,0,0.2)",
+        background: "rgba(255,255,255,0.15)",
+        backdropFilter: "blur(8px)",
+        borderBottom: "2px solid rgba(0, 234, 255, 0.3)",
+        letterSpacing: "0.3px",
+        lineHeight: "1.3",
       }}>
         Online Mental Health Counseling System
       </div>
@@ -170,7 +172,7 @@ export default function Navbar() {
           <MotionLink to="/emergency" style={navButtonStyle} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Emergency</MotionLink>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
@@ -193,23 +195,24 @@ const dropdownStyle = {
   position: "absolute",
   top: "38px",
   left: 0,
-  background: "rgba(83, 84, 84, 0.9)",
+  background: "rgba(30, 30, 30, 0.98)",
   borderRadius: "12px",
   padding: "10px 16px",
   display: "flex",
   flexDirection: "column",
   gap: "8px",
   minWidth: "150px",
-  zIndex: 100,
-  backdropFilter: "blur(8px)",
-  boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
+  zIndex: 9999,
+  backdropFilter: "blur(10px)",
+  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)",
+  border: "1px solid rgba(0, 234, 255, 0.3)",
   whiteSpace: "nowrap",
 };
 
 const dropdownLink = {
-  color: "#badee1ff",
+  color: "#00eaff",
   textDecoration: "none",
-  fontWeight: "500",
+  fontWeight: "600",
   fontSize: "14px",
   transition: "color 0.2s ease",
 };
