@@ -13,7 +13,6 @@ import {
   errorStyle,
 } from "../../styles/shared";
 
-
 export default function UserLogin({ onLogin }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
