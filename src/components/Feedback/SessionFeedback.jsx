@@ -9,7 +9,8 @@ import {
   buttonStyle,
   formGroupStyle,
   labelStyle,
-} from "../../styles/shared";
+} 
+from "../../styles/shared";
 
 export default function SessionFeedback() {
   const [rating, setRating] = useState(0);
