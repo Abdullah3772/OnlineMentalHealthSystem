@@ -11,7 +11,7 @@ import {
   formGroupStyle,
   infoBoxStyle,
   errorStyle,
-} from "../../styles/shared";
+}  from "../../styles/shared";
 
 export default function UserLogin({ onLogin }) {
   const navigate = useNavigate();
