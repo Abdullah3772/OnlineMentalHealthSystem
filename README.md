@@ -1,11 +1,11 @@
 # React + Vite
 
 Group Members
-GWU-HICT-2022-39 User + Layout Insite code I do
-GWU-HICT-2022-20  Therapist Insite code I do
-GWU-HICT-2022-49 Feedback Insite code I do
-GWU-HICT-2022-54 Emergency Insite code I do
-GWU-HICT-2022-58 Appointment Insite code I do
+GWU-HICT-2022-39 User + Layout Insite code I do,
+GWU-HICT-2022-20  Therapist Insite code I do,
+GWU-HICT-2022-49 Feedback Insite code I do,
+GWU-HICT-2022-54 Emergency Insite code I do,
+GWU-HICT-2022-58 Appointment Insite code I do,
 
 
 
