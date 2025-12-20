@@ -13,7 +13,7 @@ export default function UserDashboard() {
     const t = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
-
+ 
   // Dummy doctors
   const doctors = [
     {
