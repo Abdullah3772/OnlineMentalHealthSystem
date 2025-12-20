@@ -8,7 +8,8 @@ import {
   buttonStyle,
   selectStyle,
   formGroupStyle,
-} from "../../styles/shared";
+} 
+from "../../styles/shared";
 
 export default function UserRegister() {
   return (
