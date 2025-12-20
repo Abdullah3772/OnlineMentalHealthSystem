@@ -11,6 +11,7 @@ import {
   flexRowStyle,
 } from "../../styles/shared";
 
+
 export default function TherapistRegister() {
   return (
     <motion.div
