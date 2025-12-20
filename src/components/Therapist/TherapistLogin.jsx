@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import
- {
+import {
+  
   containerStyle,
   formContainerStyle,
   headingStyle,
@@ -11,6 +11,7 @@ import
   formGroupStyle,
   infoBoxStyle,
 } from "../../styles/shared";
+
 
 export default function TherapistLogin({ onLogin }) {
   const navigate = useNavigate();

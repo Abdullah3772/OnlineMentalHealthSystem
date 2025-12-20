@@ -9,7 +9,7 @@ export default function Navbar() {
   const [showTherapistMenu, setShowTherapistMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
-  const userRef = useRef(null);
+   const userRef = useRef(null);
   const therapistRef = useRef(null);
   const profileRef = useRef(null);
 

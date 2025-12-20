@@ -11,6 +11,7 @@ export default function TherapistDashboard() {
   const chatEndRef = useRef(null);
   
 
+  
   // Auto scroll chat
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
