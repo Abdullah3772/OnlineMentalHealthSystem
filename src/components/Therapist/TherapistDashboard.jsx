@@ -9,6 +9,7 @@ export default function TherapistDashboard() {
   ]);
 
   const chatEndRef = useRef(null);
+  
 
   
   // Auto scroll chat
