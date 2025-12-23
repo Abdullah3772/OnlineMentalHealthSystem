@@ -10,8 +10,7 @@ import {
   selectStyle,
   formGroupStyle,
   labelStyle,
-} 
-from "../../styles/shared";
+} from "../../styles/shared";
 
 export default function EmergencySupport() {
   const [contactMethod, setContactMethod] = useState("");
@@ -49,11 +48,22 @@ export default function EmergencySupport() {
           </p>
         </div>
 
-        <div style={formGroupStyle}>
-          <input placeholder="Your Name" style={inputStyle} required />
-          <input placeholder="Contact Number" type="tel" style={inputStyle} required />
+        <form style={formGroupStyle}>
+          <input
+            placeholder="Your Name"
+            style={inputStyle}
+            required
+            aria-label="Your Name"
+          />
+          <input
+            placeholder="Contact Number"
+            type="tel"
+            style={inputStyle}
+            required
+            aria-label="Contact Number"
+          />
 
-          <select style={selectStyle} required>
+          <select style={selectStyle} required aria-label="Type of Emergency">
             <option value="">Select Type of Emergency</option>
             <option value="suicidal">Suicidal Thoughts</option>
             <option value="panic">Panic Attack</option>
@@ -63,53 +73,41 @@ export default function EmergencySupport() {
             <option value="other">Other</option>
           </select>
 
-          <div>
-            <label style={labelStyle}>Preferred Contact Method:</label>
+          <fieldset style={{ marginTop: "12px" }}>
+            <legend style={labelStyle}>Preferred Contact Method:</legend>
             <div style={{ display: "flex", gap: "20px", marginTop: "8px" }}>
-              <label
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  cursor: "pointer",
-                }}
-              >
+              <label style={{ display: "flex", alignItems: "center", gap: "6px", cursor: "pointer" }}>
                 <input
                   type="radio"
                   name="contactMethod"
                   value="call"
+                  aria-label="Call"
                   onChange={() => setContactMethod("call")}
-                  style={{ cursor: "pointer" }}
                 />
                 <span style={{ fontWeight: "600", color: "#000" }}>📞 Call</span>
               </label>
-              <label
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  cursor: "pointer",
-                }}
-              >
+              <label style={{ display: "flex", alignItems: "center", gap: "6px", cursor: "pointer" }}>
                 <input
                   type="radio"
                   name="contactMethod"
                   value="chat"
+                  aria-label="Chat"
                   onChange={() => setContactMethod("chat")}
-                  style={{ cursor: "pointer" }}
                 />
                 <span style={{ fontWeight: "600", color: "#000" }}>💬 Chat</span>
               </label>
             </div>
-          </div>
+          </fieldset>
 
           <textarea
             placeholder="Describe the Emergency (Optional)"
             rows="4"
             style={textareaStyle}
+            aria-label="Emergency Description"
           ></textarea>
 
           <motion.button
+            type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             style={{
@@ -117,11 +115,12 @@ export default function EmergencySupport() {
               background: "linear-gradient(135deg, #ff3b3b 0%, #d32f2f 100%)",
               color: "#fff",
               boxShadow: "0 4px 15px rgba(255, 0, 0, 0.4)",
+              marginTop: "12px",
             }}
           >
             🚨 Send Emergency Alert
           </motion.button>
-        </div>
+        </form>
       </motion.div>
     </motion.div>
   );
